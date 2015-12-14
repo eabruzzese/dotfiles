@@ -1,4 +1,4 @@
-f &compatible
+if &compatible
   set nocompatible
 end
 
