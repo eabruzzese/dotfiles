@@ -15,6 +15,7 @@ brew 'homebrew/dupes/grep'
 brew 'trash'
 brew 'rcm'
 brew 'macvim', args: ['with-cscope', 'with-lua', 'with-override-system-vim']
+brew 'php70'
 
 # Applications
 cask '1password'
