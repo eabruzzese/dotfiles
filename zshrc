@@ -13,6 +13,9 @@ fi
 # Autojump
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
+# rbenv
+eval "$(rbenv init - --no-rehash zsh)"
+
 # Aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 

@@ -25,6 +25,7 @@ brew 'redis'
 # Tools
 brew 'autojump'
 brew 'git'
+brew 'heroku-toolbelt'
 brew 'hub'
 brew 'macvim', args: ['with-cscope', 'with-lua', 'with-override-system-vim']
 brew 'rcm'

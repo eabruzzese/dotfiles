@@ -1,0 +1,35 @@
+#!/usr/bin/env zsh
+
+# Install and update gems
+gem_install_or_update() {
+  if gem list "$1" --installed > /dev/null; then
+    echo "Updating $1..."
+    gem update "$@"
+  else
+    echo "Installing $1..."
+    gem install "$@"
+    rbenv rehash
+  fi
+}
+
+# Repair OpenSSL
+brew unlink openssl && brew link openssl --force
+
+# Fetch the latest ruby version
+RUBY_VERSION="$(curl -sSL http://ruby.thoughtbot.com/latest)"
+
+# Start rbenv
+eval "$(rbenv init - zsh)"
+
+# Install the latest version of ruby
+if ! rbenv versions | grep -Fq "$RUBY_VERSION"; then
+  rbenv install -s "$RUBY_VERSION"
+fi
+
+rbenv global "$RUBY_VERSION"
+
+gem_install_or_update 'bundler'
+gem_install_or_update 'suspenders'
+
+NUMBER_OF_CORES=$(sysctl -n hw.ncpu)
+bundle config --global jobs $((NUMBER_OF_CORES - 1))
