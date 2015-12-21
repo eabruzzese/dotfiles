@@ -30,6 +30,7 @@ rbenv global "$RUBY_VERSION"
 
 gem_install_or_update 'bundler'
 gem_install_or_update 'suspenders'
+gem_install_or_update 'foreman'
 
 NUMBER_OF_CORES=$(sysctl -n hw.ncpu)
 bundle config --global jobs $((NUMBER_OF_CORES - 1))

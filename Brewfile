@@ -17,6 +17,7 @@ brew 'imagemagick'
 # Libraries
 brew 'libyaml'
 brew 'openssl'
+brew 'qt'
 
 # Services
 brew 'postgresql'

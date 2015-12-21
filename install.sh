@@ -14,6 +14,7 @@ brew bundle
 pushd "./install"
     source settings
     source languages/ruby
+    source services
 popd
 
 # Symlink the dotfiles
