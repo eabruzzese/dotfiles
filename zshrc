@@ -19,5 +19,8 @@ eval "$(rbenv init - --no-rehash zsh)"
 # Aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
+# Local bin
+export PATH="${ZDOTDIR:-$HOME}/dotfiles/bin:$PATH"
+
 # Local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local

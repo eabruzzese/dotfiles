@@ -6,6 +6,10 @@ endif
 " Remap leader to comma
 let mapleader=","
 
+" Make vim redrawing much faster
+set lazyredraw
+set ttyfast
+
 set mouse=a
 set guioptions=egm
 set guifont=Menlo:h14
