@@ -10,6 +10,9 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+# Use vim as the default editor
+export EDITOR="vim"
+
 # rbenv
 eval "$(rbenv init - --no-rehash zsh)"
 

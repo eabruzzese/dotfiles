@@ -17,5 +17,9 @@ pushd "./install"
     source services
 popd
 
+# Install gems from the Gemfile
+bundle install
+rbenv rehash
+
 # Symlink the dotfiles
 env RCRC=$SCRIPT_DIR/rcrc rcup
