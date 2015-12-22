@@ -24,7 +24,7 @@ brew 'postgresql'
 brew 'redis'
 
 # Tools
-brew 'autojump'
+brew 'fasd'
 brew 'git'
 brew 'heroku-toolbelt'
 brew 'hub'
