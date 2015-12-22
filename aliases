@@ -8,5 +8,14 @@ alias v="$VISUAL"
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
 
+work() {
+  if [ -z "$1" ];
+  then
+    mux $(mux list | tail -n +2 | tr " " "\n" | sed '/^$/d' | pick)
+  else
+    mux $(mux list | tail -n +2 | tr " " "\n" | sed '/^$/d' | pick -d -q $1)
+  fi
+}
+
 # Include custom aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
