@@ -29,6 +29,7 @@ brew 'git'
 brew 'heroku-toolbelt'
 brew 'hub'
 brew 'macvim', args: ['with-cscope', 'with-lua', 'with-override-system-vim']
+brew 'pick'
 brew 'rcm'
 brew 'the_silver_searcher'
 brew 'trash'
