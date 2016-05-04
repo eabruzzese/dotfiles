@@ -19,7 +19,8 @@ set antialias
 nnoremap <silent> + :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> - :exe "resize " . (winheight(0) * 2/3)<CR>
 
-colorscheme Tomorrow-Night-Eighties
+autocmd ColorScheme janah highlight Normal ctermbg=235
+colorscheme janah
 set splitbelow
 set splitright
 
@@ -66,11 +67,9 @@ let g:airline_powerline_fonts            = 1
 let g:indent_guides_color_change_percent = 3
 let g:indent_guides_guide_size           = 1
 let g:indent_guides_start_level          = 2
-let g:pymode_folding                     = 0
-let g:pymode_lint                        = 1
-let g:pymode_lint_on_write               = 1
-let g:pymode_rope                        = 0
-let g:pymode_virtualenv                  = 1
+let g:flake8_show_in_gutter              = 1
+
+autocmd BufWritePost *.py call Flake8()
 
 let g:numbers_exclude    = ['tagbar', 'gundo', 'minibufexpl']
 
@@ -198,7 +197,14 @@ nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
+""""""""""""""""
+""" Mappings """
+""""""""""""""""
 inoremap jj <Esc>
+noremap  <buffer> <silent> k gk
+noremap  <buffer> <silent> j gj
+noremap  <buffer> <silent> 0 g0
+noremap  <buffer> <silent> $ g$
 
 """""""""""""""""
 """ Scrolloff """

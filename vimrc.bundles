@@ -7,6 +7,7 @@ call plug#begin('~/.vim/plugged')
 " Define bundles via Github repos
 Plug 'sensible.vim'
 Plug 'vim-scripts/pbcopy.vim'
+Plug 'ConradIrwin/vim-bracketed-paste'
 
 " Languages
 "   Ruby
@@ -15,6 +16,7 @@ Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
+Plug 'ngmy/vim-rubocop'
 "   JavaScript
 Plug 'itspriddle/vim-jquery'
 Plug 'jiangmiao/simple-javascript-indenter'
@@ -24,7 +26,7 @@ Plug 'leshill/vim-json'
 Plug 'tudorprodan/html_annoyance.vim'
 Plug 'xenoterracide/html.vim'
 "   Python
-Plug 'klen/python-mode'
+Plug 'nvie/vim-flake8'
 "   Go
 Plug 'fatih/vim-go'
 "   Other
@@ -73,6 +75,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'shougo/neocomplete.vim'
 Plug 'vim-scripts/argtextobj.vim'
+Plug 'terryma/vim-multiple-cursors'
 
 "indent guides
 Plug 'nathanaelkane/vim-indent-guides'
@@ -86,6 +89,7 @@ Plug 'tomtom/tlib_vim'
 " Colors
 Plug 'altercation/vim-colors-solarized'
 Plug 'd11wtq/tomorrow-theme-vim'
+Plug 'mhinz/vim-janah'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
