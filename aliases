@@ -8,6 +8,15 @@ alias v="$VISUAL"
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
 
+# Update a cask
+caskup() {
+  rm -rf "$(brew --cache)"
+  brew update
+  brew cask uninstall --force "$@"
+  brew cask install "$@"
+}
+
+# List tmuxinator projects to work on
 work() {
   if [ -z "$1" ];
   then
