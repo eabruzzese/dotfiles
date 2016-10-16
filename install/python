@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+brew install python
+
+pip install virtualenvwrapper
+
+

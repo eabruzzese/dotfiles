@@ -28,7 +28,12 @@ fi
 
 rbenv global "$RUBY_VERSION"
 
+# Install and configure bundler
 gem_install_or_update 'bundler'
 
 NUMBER_OF_CORES=$(sysctl -n hw.ncpu)
 bundle config --global jobs $((NUMBER_OF_CORES - 1))
+
+# Install gems from the Gemfile
+bundle install
+rbenv rehash

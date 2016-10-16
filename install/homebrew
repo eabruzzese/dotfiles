@@ -1,13 +1,11 @@
 #!/usr/bin/env zsh
 
-if [ ! -f $(which -s brew) ];
-then
+if [ ! -f $(which -s brew) ]; then
 	echo "Installing Homebrew..."
 	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)";
 fi
 
-if [ -f $(which -s brew) ];
-then
+if [ -f $(which -s brew) ]; then
 	echo "Installing Homebrew's bundler..."
 	brew tap homebrew/bundle;
 fi

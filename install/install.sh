@@ -3,23 +3,24 @@
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Install Homebrew and Prezto, initialize system settings
-pushd "./install"
-    source homebrew
-    source prezto
-popd
+source homebrew
 
 # Install Homebrew packages from the Brewfile
 brew bundle
 
-pushd "./install"
-    source settings
-    source languages/ruby
-    source services
-popd
+# Install languages
+source ruby
+source node
+source python
 
-# Install gems from the Gemfile
-bundle install
-rbenv rehash
+# Start services
+source services
+
+# Install Prezto
+source prezto
 
 # Symlink the dotfiles
 env RCRC=$SCRIPT_DIR/rcrc rcup
+
+# Set up sane macOS defaults
+source settings

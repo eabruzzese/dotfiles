@@ -16,12 +16,22 @@ export EDITOR="vim"
 # Always install Casks to /Applications by default
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-# rbenv
+# Add Homebrew to the PATH
+export PATH="$(brew --prefix)/bin:$PATH"
+
+# Ruby
 eval "$(rbenv init - --no-rehash zsh)"
 
-# nvm
+# Node
 export NVM_DIR="${ZDOTDIR:-$HOME}/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# Require all pip installations to require a virtualenv
+export PIP_REQUIRE_VIRTUALENV=true
+
+# Set virtualenv directories
+export WORKON_HOME="$HOME/Workspace"
+export PROJECT_HOME=$WORKON_HOME
 
 # Aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
